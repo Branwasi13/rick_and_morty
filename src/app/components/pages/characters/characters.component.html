@@ -8,5 +8,11 @@
         </div>
     </div>
 </div>
-<button *[ngIf]="" (click)="printCharacters()">Previous</button>
-<button (click)="printCharacters(10)">Next</button>
+<button *ngIf="page == 1; else previousButton" disabled (click)="previousPageButton()">Previous</button>
+<ng-template #previousButton>
+    <button (click)="previousPageButton()">Previous</button>
+</ng-template>
+<button *ngIf="page > 42; else nextButton" disabled (click)="nextPageButton()">Next</button>
+<ng-template #nextButton>
+    <button (click)="nextPageButton()">Next</button>
+</ng-template>
