@@ -1,0 +1,12 @@
+<div class="d-flex flex-wrap">
+    <div *ngFor="let character of characters" class="card" style="width: 18rem;">
+        <img [src]="character.image" class="card-img-top" [alt]="character.name">
+        <div class="card-body">
+            <h5 class="card-title">{{character.name}}</h5>
+            <p class="card-text">Status: {{character.status}}</p>
+            <p>Gender: {{character.gender}}</p>
+        </div>
+    </div>
+</div>
+<button *[ngIf]="" (click)="printCharacters()">Previous</button>
+<button (click)="printCharacters(10)">Next</button>
